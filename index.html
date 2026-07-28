@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loop 26 </title>
+    
+    <title>Loop 26 beta alpha</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="shortcut icon" href="./img/it.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/globo.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+    <video autoplay loop muted playsinline class="hero-video-bg">
+        <source src="9dd002a75_Hero_Video.mp4" type="video/mp4">
+    </video>
+
     
-    <div class="planet-bg-container">
-        <img src="./img/it.png" alt="Planeta Terra" class="planet-image">
-        <div class="space-stars"></div>
-    </div>
 
     <header class="navbar">
         <div class="nav-container">
@@ -24,7 +27,6 @@
             <nav class="nav-menu">
                 <a href="driver.html">Sistema Para Windows</a>
                 <a href="loop.html">Onde Comprar</a>
-                <a href="aguarde.html">Nexus API center</a>
                 <a href="https://wa.me/5554996230237">Nosso contato</a>
                 
             </nav>
@@ -180,24 +182,48 @@ Uma moeda social para conectar pessoas, negócios e oportunidades.</h2>
             </div>
         </section>
 
-<section class="cta-hub">
-            <div class="container">
-                <div class="hub-glass-card">
-                    <div class="hub-content">
-                        <span class="badge">Connect Hub</span>
-                        <h2>Comunicação inteligente em tempo real.</h2>
-                        <p>Entre em contato sem sair do site e automatize atendimentos, solicitações e suporte em um só lugar de maneira transparente.</p>
-                        
-                        <div class="hub-actions" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
-                            <a href="https://my-connecthub.base44.app/" target="_blank" class="btn btn-primary">Solicitar serviços ou tirar dúvidas</a>
-                            <a href="https://wa.me/5554996230237" target="_blank" class="btn btn-whatsapp" style="background-color: #25D366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">Fale no WhatsApp</a>
-                            <a href="https://whatsapp.com/channel/0029VbCPw5iK5cDJ9i2Uor13" target="_blank" class="btn btn-channel" style="background-color: #008069; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">Nosso Canal</a>
-                        </div>
-                    </div>
-                </div>
+
+
+       <svg style="display: none;">
+  <defs>
+    <filter id="container-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1" result="turbulence" />
+      <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+      <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R" yChannelSelector="B" result="displaced" />
+      <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+      <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+    </filter>
+  </defs>
+</svg>
+
+<section class="shader-section">
+    <canvas id="shaderCanvas" class="shader-canvas"></canvas>
+
+    <div class="shader-container">
+        <div class="shader-card">
+            <h1 class="shader-title">Design é Tudo</h1>
+            <p class="shader-description">
+                Liberando a criatividade por meio de visuais marcantes, interfaces fluidas e possibilidades ilimitadas.
+            </p>
+
+            <div class="status-badge">
+                <span class="ping-container">
+                    <span class="ping-wave"></span>
+                    <span class="ping-dot"></span>
+                </span>
+                <span class="status-text">Disponível para Novos Projetos</span>
             </div>
-        </section>
-    </main>
+
+            <div class="button-wrapper">
+                <a href="desing.html" class="liquid-glass-btn">
+  <span class="btn-shadow"></span>
+  <span class="btn-glass"></span>
+  <span class="btn-text">Vamos Lá</span>
+</a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <footer class="footer">
         <div class="container footer-container">
@@ -213,8 +239,9 @@ Uma moeda social para conectar pessoas, negócios e oportunidades.</h2>
             </div>
         </div>
     </footer>
-
+    <script src="java script/bar.js"></script>
     <script src="java script/script.js"></script>
     <script src="java script/teste.js"></script>
+    <script type="module" src="java script/globo.js"></script>
 </body>
 </html>
