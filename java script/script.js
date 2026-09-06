@@ -40,7 +40,7 @@ function enviarPedido() {
                 `*Tem Logo:* ${logo}%0A` +
                 `*Domínio:* ${dom}`;
 
-    window.open(`https://wa.me/5554996230237?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5554993243670?text=${msg}`, '_blank');
 }
 
 // ==========================================================================
@@ -79,7 +79,7 @@ async function verificarDominio() {
             statusCard.style.border = "1px solid rgba(0, 128, 0, 0.15)";
             btnReservar.style.display = 'inline-block';
             btnReservar.onclick = function() {
-                window.open(`https://wa.me/5554996230237?text=Olá! Verifiquei no site que o domínio *${dominioCompleto}* está disponível e gostaria de reservá-lo junto ao meu projeto.`, '_blank');
+                window.open(`https://wa.me/5554993243670?text=Olá! Verifiquei no site que o domínio *${dominioCompleto}* está disponível e gostaria de reservá-lo junto ao meu projeto.`, '_blank');
             };
         } 
         else if (response.ok) {
@@ -96,7 +96,7 @@ async function verificarDominio() {
         btnReservar.style.display = 'inline-block';
         btnReservar.innerText = "Consultar via WhatsApp";
         btnReservar.onclick = function() {
-            window.open(`https://wa.me/5554996230237?text=Olá! Tentei consultar o domínio *${dominioCompleto}* mas deu erro. Pode olhar para mim se está disponível?`, '_blank');
+            window.open(`https://wa.me/5554993243670?text=Olá! Tentei consultar o domínio *${dominioCompleto}* mas deu erro. Pode olhar para mim se está disponível?`, '_blank');
         };
     }
 }
