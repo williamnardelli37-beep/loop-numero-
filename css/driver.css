@@ -1,0 +1,420 @@
+/* ==========================================================================
+   LOOP OPTIMIZER 26 - WINDOWS PREMIUM FLUENT LIGHT MODE (OFFICIAL)
+   Estúdio Design de Alta Fidelidade - Edição Construtiva Completa
+   Compatibilidade Total com Elementos e Estrutura do driver.html
+   ========================================================================== */
+
+:root {
+    /* Paleta Cromática Fluent Light (Mica & Acrylic Material) */
+    --win-bg: #f3f3f3;          /* Fundo Canvas clássico do Windows 11 */
+    --win-surface: rgba(243, 243, 243, 0.7); /* Efeito Acrylic Claro */
+    --win-card: rgba(255, 255, 255, 0.75);  /* Elemento Material Mica */
+    --win-card-hover: #ffffff;
+    
+    /* Cores de Acentuação Windows (Foco em Performance e Conversão) */
+    --win-accent: #0078d4;           /* Azul Oficial Windows */
+    --win-accent-secondary: #005a9e;  /* Variante de Hover */
+    --accent-blue: #0078d4;          /* Compatibilidade com inline-styles */
+    
+    /* Tipografia e Escala de Cores */
+    --win-text-main: #202020;        /* Grafite Escuro oficial Microsoft */
+    --win-text-secondary: #5f5f5f;   /* Cinza de paginação secundária */
+    --apple-gray: #737373;           /* Compatibilidade com rodapé e notas inline */
+    --win-border: rgba(0, 0, 0, 0.06);
+    --win-border-hover: rgba(0, 120, 212, 0.3);
+    
+    /* Geometria Dinâmica e Efeitos */
+    --win-radius: 8px;               /* Cantos arredondados padrão Windows 11 */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+    --transition-smooth: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1); /* Curva Fluent */
+}
+
+/* 1. RESET E TRAVA TOTAL DE MOVIMENTOS LATERAIS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--win-bg);
+    /* Gradiente sutil baseado no wallpaper oficial Windows Bloom Light */
+    background-image: 
+        radial-gradient(circle at 100% 0%, rgba(0, 120, 212, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(98, 0, 238, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    background-attachment: fixed;
+    color: var(--win-text-main);
+    font-family: 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* 2. BARRA DE NAVEGAÇÃO TRANSLÚCIDA (.apple-navbar) */
+.apple-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(243, 243, 243, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-bottom: 1px solid var(--win-border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Estilizada */
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--win-text-main);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    letter-spacing: -0.01em;
+}
+
+.logo .lev {
+    color: var(--win-accent);
+    font-weight: 700;
+}
+
+/* Menu de Links */
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--win-text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--win-text-main);
+}
+
+/* Suporte Embutido para Menu Toggle (Caso adicione interatividade posterior) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle .bar {
+    width: 20px;
+    height: 2px;
+    background-color: var(--win-text-main);
+    transition: var(--transition-smooth);
+    border-radius: 1px;
+}
+
+/* 3. ARQUITETURA DO CONTEÚDO PRINCIPAL (main) */
+main {
+    padding-top: 130px;
+    display: block;
+}
+
+/* Hero Section Base */
+.hero-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Reserva espaço para o vetor flutuante do Windows */
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+
+/* Bloco de Texto Principal */
+.ai-header {
+    text-align: left;
+    animation: slideUp 0.8s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+/* Badge Estilo Cápsula do Windows */
+.ai-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(0, 120, 212, 0.08);
+    border: 1px solid rgba(0, 120, 212, 0.15);
+    color: var(--win-accent);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+}
+
+.hero-top h2 {
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--win-text-main);
+}
+
+.hero-top p {
+    color: var(--win-text-secondary);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 540px;
+}
+
+/* Inserção Orgânica da Logo Windows Modern Bloom à direita */
+.hero-top::after {
+    content: "";
+    grid-column: 2;
+    grid-row: 1;
+    width: 280px;
+    height: 280px;
+    justify-self: center;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg') no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 15px 35px rgba(0, 120, 212, 0.12));
+    animation: subtleFloat 6s ease-in-out infinite;
+}
+
+/* 4. BOTÃO PREMIUM DE DOWNLOAD (.apple-button-glass) */
+.apple-button-glass {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--win-accent) !important; /* Força sobreposição estável */
+    color: #ffffff !important;
+    padding: 16px 36px;
+    border-radius: var(--win-radius);
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.18), inset 0 1px 0 rgba(255,255,255,0.2);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(0, 120, 212, 0.1);
+    cursor: pointer;
+}
+
+.apple-button-glass:hover {
+    background: var(--win-accent-secondary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 120, 212, 0.28);
+}
+
+.apple-button-glass i.ph {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* 5. SEÇÃO DE RECURSOS (.ai-experience & .ai-container) */
+.ai-experience {
+    padding: 20px 0 80px 0;
+    width: 100%;
+}
+
+.ai-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grid Organizador dos Blocos */
+.container-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 0 24px;
+}
+
+/* 6. CARDS MICA COM EFEITO ACELERADO (.bloco-card) */
+.bloco-card {
+    background: var(--win-card);
+    border: 1px solid var(--win-border);
+    border-radius: var(--win-radius);
+    padding: 36px 28px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.bloco-card:hover {
+    background: var(--win-card-hover);
+    border-color: var(--win-border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ícones Phosphor dentro dos Cards */
+.bloco-card i.ph {
+    font-size: 32px;
+    color: var(--win-accent);
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.bloco-card:hover i.ph {
+    transform: scale(1.06);
+}
+
+.bloco-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--win-text-main);
+    letter-spacing: -0.01em;
+}
+
+.bloco-card p {
+    font-size: 14.5px;
+    color: var(--win-text-secondary);
+    line-height: 1.6;
+}
+
+/* 7. RODAPÉ (.apple-footer, .footer-container e sub-classes) */
+.apple-footer {
+    border-top: 1px solid var(--win-border);
+    padding: 48px 24px;
+    background: rgba(243, 243, 243, 0.9);
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-brands {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+.apple-footer p {
+    font-size: 13.5px;
+    color: var(--win-text-secondary);
+    text-align: left;
+}
+
+.apple-footer strong {
+    color: var(--win-text-main);
+    font-weight: 600;
+}
+
+.footer-mapa {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+/* 8. ANIMAÇÕES NATIVAS COERENTES */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 9. SUPORTE MÍDIA COMPLETA (RESPONSIVIDADE RÍGIDA) */
+@media (max-width: 992px) {
+    .hero-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-top::after {
+        grid-column: 1;
+        grid-row: auto;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto 0 auto;
+    }
+    .hero-top p { margin: 0 auto 32px auto; }
+}
+
+@media (max-width: 768px) {
+    main { padding-top: 110px; }
+    .hero-top { padding: 40px 20px; }
+    .hero-top h2 { font-size: 32px; }
+    .container-links { padding: 0 20px; gap: 16px; }
+    .bloco-card { padding: 28px 20px; }
+    
+    .nav-content, .footer-container { padding: 12px 20px; }
+    .apple-footer p { text-align: center; }
+
+    /* Ajuste estrutural do botão em telas pequenas */
+    .apple-button-glass { 
+        width: 100%; 
+        box-sizing: border-box; 
+        padding: 16px 20px;
+    }
+    
+    /* Configuração adaptativa do menu em lista para mobile */
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}

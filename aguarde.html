@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop 26 | Quase Lá</title>
+    <style>
+        /* Reset e Definições de Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa; 
+            color: #1e293b; 
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Luzes de Fundo Suaves (Soft Glow Aura) */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.08; 
+            z-index: 1;
+        }
+        body::before {
+            background: #0b85ff; 
+            top: -20%;
+            left: -10%;
+        }
+        body::after {
+            background: #00d2ff;
+            bottom: -20%;
+            right: -10%;
+        }
+
+        /* Container Principal (Clean Design) */
+        .card-preview {
+            position: relative;
+            z-index: 10;
+            background: #ffffff; 
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 60px 40px;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 540px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04),
+                        0 0 80px rgba(11, 133, 255, 0.05);
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        /* Efeito de carregamento / Loop */
+        .loop-loader {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loop-loader::before, .loop-loader::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid transparent;
+        }
+
+        .loop-loader::before {
+            width: 100%;
+            height: 100%;
+            border-top-color: #0b85ff;
+            border-bottom-color: #0b85ff;
+            animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        .loop-loader::after {
+            width: 70%;
+            height: 70%;
+            border-left-color: #00d2ff;
+            border-right-color: #00d2ff;
+            animation: spinReverse 1.5s linear infinite;
+        }
+
+        /* Tipografia */
+        .tag {
+            display: inline-block;
+            background: rgba(11, 133, 255, 0.08);
+            border: 1px solid rgba(11, 133, 255, 0.15);
+            color: #0b85ff;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: #0f172a; 
+        }
+
+        p {
+            color: #64748b; 
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Barra de Progresso Conceitual */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px; /* Espaço extra para o botão */
+        }
+
+        .progress-line {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #0b85ff, #00d2ff);
+            transform: translateX(-100%);
+            animation: progressMove 3s infinite ease-in-out;
+        }
+
+        /* Botão Voltar (Estilo Loop Minimal) */
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 12px 28px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-voltar:hover {
+            color: #0b85ff;
+            border-color: #0b85ff;
+            background-color: rgba(11, 133, 255, 0.02);
+            transform: translateY(-1px);
+        }
+
+        /* Animações */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spinReverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes progressMove {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(0%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-preview">
+        <div class="loop-loader"></div>
+
+        <span class="tag">Breve Lançamento</span>
+        <h1>Algo grande está sendo construído</h1>
+        <p>Estamos refinando os últimos detalhes para entregar uma experiência ultra veloz e inteligente. Volte em instantes.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-line"></div>
+        </div>
+
+        <a href="index.html" class="btn-voltar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Voltar ao Início
+        </a>
+    </div>
+
+</body>
+</html>
