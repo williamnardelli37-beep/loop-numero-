@@ -1,6 +1,5 @@
 /* ===================================================
    LOOP 26 — VOGUE × ARMANI EDITORIAL
-   Estética haute couture: serifada, clara, minimalista
 =================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
@@ -12,7 +11,6 @@
     --accent: #1a1a1a;
     --accent-gradient: linear-gradient(135deg, #14100c 0%, #3a3229 100%);
 
-    /* Núcleo do Liquid Glass (claro) */
     --glass-bg: rgba(255, 255, 255, 0.12);
     --glass-border: rgba(255, 255, 255, 0.35);
     --glass-shadow: 0 8px 32px rgba(20, 16, 12, 0.08),
@@ -20,7 +18,6 @@
                     inset 0 -1px 1px rgba(0, 0, 0, 0.05);
     --glass-blur: 24px;
 
-    /* Tipografia Vogue */
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Cormorant Garamond', Georgia, serif;
 
@@ -63,10 +60,9 @@ body {
     object-fit: cover;
     z-index: -2;
     pointer-events: none;
-    filter: grayscale(35%) contrast(1.05) brightness(1.08); /* look editorial */
+    filter: grayscale(35%) contrast(1.05) brightness(1.08);
 }
 
-/* Overlay claro (marfim) para look Vogue e legibilidade do texto escuro */
 body::before {
     content: '';
     position: fixed;
@@ -79,7 +75,7 @@ body::before {
     pointer-events: none;
 }
 
-/* ===== TIPOGRAFIA EDITORIAL ===== */
+/* ===== TIPOGRAFIA ===== */
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -191,7 +187,6 @@ p {
     margin-top: auto;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    /* fix: não deixa o link empurrar o layout */
     overflow-wrap: anywhere;
     max-width: 100%;
 }
@@ -241,10 +236,8 @@ p {
     transition: var(--transition);
 }
 .nav-menu a:hover { color: var(--text-primary); }
-
 .nav-cta { display: flex; align-items: center; }
 
-/* Botão hambúrguer (bar.js adiciona .active) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -291,49 +284,6 @@ p {
     flex-wrap: wrap;
 }
 
-/* ===== GLASS PREVIEW CARD (caso reative o hero-visual) ===== */
-.hero-visual { display: flex; justify-content: center; }
-.glass-preview-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: var(--radius-lg);
-    padding: 44px;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-    width: 100%;
-    max-width: 440px;
-}
-.window-header { display: flex; gap: 6px; margin-bottom: 32px; }
-.dot { width: 11px; height: 11px; border-radius: 50%; }
-.dot.red { background: #e8a598; }
-.dot.yellow { background: #e8d4a0; }
-.dot.green { background: #a8c9a0; }
-.card-tag {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--text-muted);
-    display: block;
-    margin-bottom: 12px;
-}
-.glass-preview-card h3 { font-size: 30px; font-style: italic; margin-bottom: 12px; }
-.glass-preview-card p { font-size: 17px; margin-bottom: 32px; }
-.insta-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(20, 16, 12, 0.9);
-    color: #f4f2ee;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    transition: var(--transition);
-}
-.insta-link:hover { transform: scale(1.03); }
-
 /* ===== PARTNERS ===== */
 .partners {
     border-top: 1px solid var(--glass-border);
@@ -364,7 +314,6 @@ p {
     color: var(--text-muted);
     opacity: 0.7;
     transition: var(--transition);
-    /* fix: quebra domínios longos nos parceiros */
     overflow-wrap: anywhere;
     word-break: break-word;
 }
@@ -373,8 +322,168 @@ p {
     color: var(--text-primary);
 }
 
-/* ===== INTELLIGENCE / FEATURES ===== */
+/* ===== LOOP EVENTO ===== */
+.loop-evento {
+    padding: 160px 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.evento-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.evento-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.evento-data-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    width: fit-content;
+}
+
+.evento-data-badge i {
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.evento-info h3 {
+    font-size: 42px;
+    font-style: italic;
+    line-height: 1.05;
+}
+
+.evento-info > p {
+    font-size: 18px;
+    max-width: 480px;
+}
+
+.evento-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.meta-item i {
+    font-size: 20px;
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.evento-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.evento-actions .btn {
+    font-size: 14px;
+    padding: 12px 22px;
+    letter-spacing: 0.08em;
+}
+
+.confirmacao-msg {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    color: #4a7c59;
+    font-family: var(--font-body);
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    padding: 14px 22px;
+    background: rgba(74, 124, 89, 0.1);
+    border: 1px solid rgba(74, 124, 89, 0.3);
+    border-radius: var(--radius-sm);
+    width: fit-content;
+}
+
+.confirmacao-msg i {
+    font-size: 20px;
+}
+
+.confirmacao-msg.show {
+    display: flex;
+    animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Vídeo */
+.evento-video-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow),
+                0 24px 60px rgba(20, 16, 12, 0.12);
+    background: #0a0a0a;
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-caption {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* ===== INTELLIGENCE ===== */
 .intelligence { padding: 160px 0; }
+
 .section-header {
     text-align: center;
     max-width: 760px;
@@ -384,7 +493,7 @@ p {
     font-size: 56px;
     font-style: italic;
     margin-bottom: 20px;
-    white-space: pre-line; /* respeita quebras de linha manuais do HTML */
+    white-space: pre-line;
 }
 .section-header p { font-size: 19px; }
 
@@ -406,6 +515,7 @@ p {
     overflow: hidden;
 }
 .feature-card:hover { transform: translateY(-4px); }
+
 .icon-box {
     width: 52px;
     height: 52px;
@@ -423,8 +533,9 @@ p {
 .feature-card h3 { font-size: 26px; font-style: italic; margin-bottom: 12px; }
 .feature-card p { font-size: 17px; }
 
-/* ===== PORTFOLIO / BENTO GRID ===== */
+/* ===== PORTFOLIO ===== */
 .portfolio { padding: 0 0 160px; }
+
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -457,7 +568,6 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* fix: garante que o conteúdo não ultrapasse o card */
     min-width: 0;
     max-width: 100%;
 }
@@ -471,7 +581,6 @@ p {
     font-size: 30px;
     font-style: italic;
     margin-bottom: 12px;
-    /* ===== FIX: quebra de domínios/URLs longas (gmobrasconstrutora.com) ===== */
     overflow-wrap: anywhere;
     word-break: break-word;
     hyphens: auto;
@@ -482,15 +591,8 @@ p {
     font-size: 18px;
     margin-bottom: 24px;
     max-width: 480px;
-    /* fix: quebra textos longos */
     overflow-wrap: anywhere;
     word-break: break-word;
-}
-
-/* Classe opcional para títulos com domínios muito longos */
-.bento-title-long {
-    font-size: 24px !important;
-    line-height: 1.15;
 }
 
 /* ===== FOOTER ===== */
@@ -524,10 +626,7 @@ p {
     font-size: 15px;
     color: var(--text-muted);
 }
-.footer-links {
-    display: flex;
-    gap: 20px;
-}
+.footer-links { display: flex; gap: 20px; }
 .footer-links a {
     text-decoration: none;
     color: var(--text-secondary);
@@ -537,7 +636,7 @@ p {
 }
 .footer-links a:hover { color: var(--text-primary); }
 
-/* ===== REVEAL (animação de entrada via JS) ===== */
+/* ===== REVEAL ===== */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -556,13 +655,13 @@ p {
     .hero-text h1 { font-size: 56px; }
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .bento-lg, .bento-md { grid-column: span 2; }
+    .evento-layout { grid-template-columns: 1fr; gap: 48px; }
 }
 
 @media (max-width: 768px) {
     .hero-video-bg { height: 100vh; }
-
     .menu-toggle { display: flex; }
-    .nav-cta { display: none; } /* opcional: esconder CTA no mobile */
+    .nav-cta { display: none; }
 
     .nav-menu {
         flex-direction: column;
@@ -597,6 +696,11 @@ p {
     .hero-text p { font-size: 18px; }
     .hero-actions { flex-direction: column; }
     .hero-actions .btn { width: 100%; }
+
+    .loop-evento { padding: 90px 0; }
+    .evento-info h3 { font-size: 32px; }
+    .evento-actions { flex-direction: column; }
+    .evento-actions .btn { width: 100%; justify-content: center; }
 
     .intelligence { padding: 90px 0; }
     .section-header h2 { font-size: 40px; }
