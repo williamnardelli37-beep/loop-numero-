@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="shortcut icon" href="../static/img/it.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/it.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loop 26 | Store 2.0</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="../static/css/fa.css">
+    <link rel="stylesheet" href="./css/fa.css">
 </head>
 <body>
 
-   
+    <div class="planet-bg-container">
+        <div class="space-stars"></div>
+        <img src="./img/it.png" alt="Planeta Terra" class="planet-image">
+    </div>
     
     <nav class="navbar">
         <div class="nav-container">
@@ -71,55 +74,41 @@
                 </div>
             </div>
         </section>
-<div class="gallery-grid">
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t1.png" alt="Projeto 1">
-        <figcaption>
-            <span class="gallery-tag">Editorial</span>
-            <h3>Projeto 01</h3>
-        </figcaption>
-    </figure>
 
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t2.png" alt="Projeto 2">
-        <figcaption>
-            <span class="gallery-tag">Campanha</span>
-            <h3>Projeto 02</h3>
-        </figcaption>
-    </figure>
-
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t3.png" alt="Projeto 3">
-        <figcaption>
-            <span class="gallery-tag">Lookbook</span>
-            <h3>Projeto 03</h3>
-        </figcaption>
-    </figure>
-
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t4.png" alt="Projeto 4">
-        <figcaption>
-            <span class="gallery-tag">Estúdio</span>
-            <h3>Projeto 04</h3>
-        </figcaption>
-    </figure>
-
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t5.png" alt="Projeto 5">
-        <figcaption>
-            <span class="gallery-tag">Editorial</span>
-            <h3>Projeto 05</h3>
-        </figcaption>
-    </figure>
-
-    <figure class="gallery-item reveal">
-        <img src="../static/img/t6.png" alt="Projeto 6">
-        <figcaption>
-            <span class="gallery-tag">Coleção</span>
-            <h3>Projeto 06</h3>
-        </figcaption>
-    </figure>
-</div>
+        <section id="my-iconnect-featured" class="section-padding">
+            <div class="container premium-focus-container">
+                <span class="badge"><i class="ph ph-crown"></i> Em Breve</span>
+                <div class="premium-grid">
+                    <div class="premium-info">
+                        <span class="brand-tag" style="text-transform:uppercase; font-size:11px; letter-spacing:0.12em; color:var(--text-muted); font-weight:700;">Plataforma de APIs & Automação</span>
+                        <h2 style="font-size:36px; margin: 12px 0 20px 0; letter-spacing:-0.04em;">NEXUS API</h2>
+                        <p class="premium-description">
+                           A plataforma completa para acesso às melhores APIs de Inteligência Artificial e soluções digitais. Integre modelos de IA, automação, processamento de dados e diversos serviços em um único lugar, com infraestrutura de alta disponibilidade.
+                        </p>
+                        <ul class="premium-benefits">
+                            <li><i class="ph ph-buildings"></i> <span><strong>App de venda de API</strong></span></li>
+                            <li><i class="ph ph-key"></i> <span><strong>Controle de chaves API</strong></span></li>
+                            <li><i class="ph ph-lightning"></i> <span><strong>Sincronização Veloz</strong></span></li>
+                            <li><i class="ph ph-shield-check"></i> <span><strong>Segurança Máxima</strong></span></li>
+                            <li><i class="ph ph-chart-line-up"></i> <span><strong>Painel Analítico</strong></span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="premium-action-card">
+                        <span class="price-label" style="font-size:12px; font-weight:600; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">Plano Inicial</span>
+                        <div class="main-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">49,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="price-subtext" style="font-size:13px; color:var(--text-muted); margin-bottom:28px;">Cancele ou mude de plano quando quiser.</p>
+                        <a href="aguarde.html" target="_blank" class="btn btn-primary" style="width:100%;">
+                            Assinar Agora <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="section-padding" style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.02);">
             <div class="container features-extra">
@@ -189,8 +178,8 @@
                     <div class="bloco-card">
                         <h3>LP + Automação</h3>
                         <p>A união exata para marcas que demandam landing pages agressivas e sincronização imediata de leads.</p>
-                        <span style="font-size: 26px; font-weight: 800; display:block; margin: 24px 0; letter-spacing:-0.03em;">R$ 2.000,00 <small style="font-size:13px; font-weight:400; color:var(--text-muted);">+ sistema</small></span>
-                        <button onclick="abrirCheckout('LP + Automação', '2000')" class="btn btn-secondary" style="width:100%;">Selecionar Projeto</button>
+                        <span style="font-size: 26px; font-weight: 800; display:block; margin: 24px 0; letter-spacing:-0.03em;">R$ 2.500,00 <small style="font-size:13px; font-weight:400; color:var(--text-muted);">+ sistema</small></span>
+                        <button onclick="abrirCheckout('LP + Automação', '2500')" class="btn btn-secondary" style="width:100%;">Selecionar Projeto</button>
                     </div>
                 </div>
             </div>
@@ -260,10 +249,10 @@
 
     <footer class="apple-footer">
         <div class="container">
-            <p>Copyright © 2026 Loop web & loop creative. Todos os direitos reservados. — <strong>54 99324-3670</strong></p>
+            <p>Copyright © 2026 Loop web & loop creative. Todos os direitos reservados. — <strong>54 99623 0237</strong></p>
         </div>
     </footer>
 
-  
+    <script src="./java script/sript.js"></script>
 </body>
 </html>
