@@ -1,269 +1,696 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <link rel="shortcut icon" href="./img/it 1.30.42 PM.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loop 26 | Store 2.0</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="./css/fa.css">
-</head>
-<body>
+:root {
+  --green-900: #163a2d;
+  --green-700: #2f684f;
+  --green-500: #639277;
+  --green-100: #e6f0e8;
+  --cream: #f8f5ec;
+  --white: #ffffff;
+  --text: #23302a;
+  --muted: #66736d;
+  --border: #dce5de;
+  --shadow: 0 18px 45px rgba(22, 58, 45, 0.12);
+}
 
-   
-    
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Loop<span class="lev">store</span></a>
-            <ul class="nav-menu">
-                <li><a href="#ai-section">Tecnologia</a></li>
-                <li><a href="#store">Preços</a></li>
-                <li><a href="#faq">Dúvidas</a></li>
-                <li><a href="index.html">Voltar</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Abrir Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </nav>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    <main>
-        <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-text">
-                    <span class="badge"><i class="ph ph-sparkle"></i> Aesthetic Edition 2026</span>
-                    <h1>Seu negócio no futuro, <span class="gradient-text">hoje.</span></h1>
-                    <p>Sites de alta conversão estruturados sob o conceito visual de luxo silencioso, engenharia fluida e transições táteis.</p>
-                    <div class="hero-actions">
-                        <a href="#store" class="btn btn-primary">Começar Projeto <i class="ph ph-arrow-up-right"></i></a>
-                        <a href="#ai-section" class="btn btn-secondary">Explorar Tecnologia</a>
-                    </div>
-                </div>
-        </section>
+html {
+  scroll-behavior: smooth;
+}
 
-        <section class="domain-checker-section">
-            <div class="container">
-                <div class="domain-card">
-                    <h3><i class="ph ph-magnifying-glass"></i> Disponibilidade de Domínio</h3>
-                    <p>Verifique imediatamente se o nome do seu negócio ou marca está livre para registro na rede mundial.</p>
-                    
-                    <div class="domain-search-group">
-                        <input type="text" id="domain-input" placeholder="Ex: sualoja">
-                        <select id="tld-select">
-                            <option value=".com">.com</option>
-                            <option value=".com.br">.com.br</option>
-                            <option value=".net">.net</option>
-                        </select>
-                        <button class="btn btn-primary" onclick="verificarDominio()">Verificar Status</button>
-                    </div>
+body {
+  color: var(--text);
+  background: var(--cream);
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+}
 
-                    <div id="domain-result" class="domain-result-box">
-                        <div id="status-card">
-                            <span id="status-text"></span>
-                            <button id="btn-reservar" class="btn btn-primary btn-sm" style="display:none; background:#1ebd59; border:none; margin-top:8px;">
-                                <i class="ph ph-whatsapp-logo"></i> Reservar via WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<div class="gallery-grid">
-    <figure class="gallery-item reveal">
-        <img src="img/t1.png" alt="Projeto 1">
-        <figcaption>
-            <span class="gallery-tag">Editorial</span>
-            <h3>Projeto 01</h3>
-        </figcaption>
-    </figure>
+button,
+input {
+  font: inherit;
+}
 
-    <figure class="gallery-item reveal">
-        <img src="img/t2.png" alt="Projeto 2">
-        <figcaption>
-            <span class="gallery-tag">Campanha</span>
-            <h3>Projeto 02</h3>
-        </figcaption>
-    </figure>
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-    <figure class="gallery-item reveal">
-        <img src="img/t3.png" alt="Projeto 3">
-        <figcaption>
-            <span class="gallery-tag">Lookbook</span>
-            <h3>Projeto 03</h3>
-        </figcaption>
-    </figure>
+button {
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
 
-    <figure class="gallery-item reveal">
-        <img src="img/t4.png" alt="Projeto 4">
-        <figcaption>
-            <span class="gallery-tag">Estúdio</span>
-            <h3>Projeto 04</h3>
-        </figcaption>
-    </figure>
+button:active {
+  transform: scale(0.97);
+}
 
-    <figure class="gallery-item reveal">
-        <img src="img/t5.png" alt="Projeto 5">
-        <figcaption>
-            <span class="gallery-tag">Editorial</span>
-            <h3>Projeto 05</h3>
-        </figcaption>
-    </figure>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    <figure class="gallery-item reveal">
-        <img src="img/t6.png" alt="Projeto 6">
-        <figcaption>
-            <span class="gallery-tag">Coleção</span>
-            <h3>Projeto 06</h3>
-        </figcaption>
-    </figure>
-</div>
+/* Cabeçalho */
 
-        <section class="section-padding" style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.02);">
-            <div class="container features-extra">
-                <div class="feature-item">
-                    <i class="ph ph-lightning"></i>
-                    <h3>Velocidade Extrema</h3>
-                    <p>Sites ultra-otimizados que carregam instantaneamente, eliminando taxas de rejeição.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="ph ph-device-mobile"></i>
-                    <h3>Responsive Design</h3>
-                    <p>Arquitetura visual tátil perfeitamente calibrada para displays móveis e iPhones.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="ph ph-chart-bar"></i>
-                    <h3>SEO Avançado</h3>
-                    <p>Estrutura limpa e sem erros pronta para indexar sua marca de forma orgânica no Google.</p>
-                </div>
-            </div>
-        </section>
+.header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0 6%;
+  background: rgba(248, 245, 236, 0.94);
+  border-bottom: 1px solid rgba(22, 58, 45, 0.1);
+  backdrop-filter: blur(12px);
+}
 
-        <section id="ai-section" class="intelligence section-padding">
-            <div class="container">
-                <div class="centered-header">
-                    <span class="badge"><i class="ph ph-cpu"></i> Loop Intelligence</span>
-                    <h2>Sistemas Corporativos</h2>
-                    <p>Desenvolvemos painéis de administração fluidos que organizam seus dados de forma autônoma.</p>
-                </div>
-                
-                <div class="container-links">
-                    <div class="bloco-card">
-                        <h3 style="display:flex; align-items:center; gap:12px;"><i class="ph ph-package"></i> Gestão de Estoque</h3>
-                        <p>Controle seus produtos, entradas e saídas em tempo real através de interfaces limpas e minimalistas.</p>
-                    </div>
-                    <div class="bloco-card">
-                        <h3 style="display:flex; align-items:center; gap:12px;"><i class="ph ph-credit-card"></i> Checkout Fluido</h3>
-                        <p>Sistemas de pagamento integrados de ponta a ponta, oferecendo máxima segurança aos compradores.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+.logo {
+  color: var(--green-900);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
-        <section id="store" class="section-padding" style="background: rgba(0,0,0,0.015);">
-            <div class="container">
-                <div class="centered-header">
-                    <span class="badge"><i class="ph ph-wallet"></i> Investimento</span>
-                    <h2>Escolha o Modelo Ideal</h2>
-                </div>
-                
-                <div class="container-links">
-                    <div class="bloco-card">
-                        <h3>Empresarial Admin</h3>
-                        <p>Plataforma institucional corporativa com painel integrado para gerenciamento e publicação de conteúdos.</p>
-                        <span style="font-size: 26px; font-weight: 800; display:block; margin: 24px 0; letter-spacing:-0.03em;">R$ 860,00 <small style="font-size:13px; font-weight:400; color:var(--text-muted);">+ domínio</small></span>
-                        <button onclick="abrirCheckout('Empresarial Admin', '860')" class="btn btn-secondary" style="width:100%;">Selecionar Projeto</button>
-                    </div>
+.logo span {
+  color: var(--green-500);
+}
 
-                    <div class="bloco-card" style="border: 2px solid var(--text-primary);">
-                        <div style="display:flex; justify-content:between; align-items:center; margin-bottom:4px;">
-                            <h3 style="margin-bottom:0;">Landing Page Vendas</h3>
-                        </div>
-                        <p>Focada 100% em conversão e campanhas de tráfego. Inclui o primeiro ano de hospedagem de alto desempenho.</p>
-                        <span style="font-size: 26px; font-weight: 800; display:block; margin: 24px 0; letter-spacing:-0.03em;">R$ 2.000,00 <small style="font-size:13px; font-weight:400; color:var(--text-muted);">Completo</small></span>
-                        <button onclick="abrirCheckout('Landing Page Vendas', '2000')" class="btn btn-primary" style="width:100%;">Selecionar Projeto</button>
-                    </div>
+.navigation {
+  display: flex;
+  gap: 28px;
+}
 
-                    <div class="bloco-card">
-                        <h3>LP + Automação</h3>
-                        <p>A união exata para marcas que demandam landing pages agressivas e sincronização imediata de leads.</p>
-                        <span style="font-size: 26px; font-weight: 800; display:block; margin: 24px 0; letter-spacing:-0.03em;">R$ 2.000,00 <small style="font-size:13px; font-weight:400; color:var(--text-muted);">+ sistema</small></span>
-                        <button onclick="abrirCheckout('LP + Automação', '2000')" class="btn btn-secondary" style="width:100%;">Selecionar Projeto</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+.navigation a {
+  position: relative;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
 
-        <section id="faq" class="section-padding" style="background: #ffffff;">
-            <div class="container">
-                <div class="centered-header">
-                    <span class="badge"><i class="ph ph-info"></i> FAQ</span>
-                    <h2>Perguntas Frequentes</h2>
-                </div>
-                
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <h4>Qual é o prazo médio de entrega?</h4>
-                        <p>Landing pages e sistemas customizados são desenhados e homologados em média em até 30 dias úteis.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>O site passa a ser meu de forma definitiva?</h4>
-                        <p>Sim. Após a entrega e conclusão do projeto, todos os acessos, códigos e domínios são transferidos integralmente para sua propriedade legal.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>Terei suporte técnico especializado pós-entrega?</h4>
-                        <p>Sim, fornecemos um período estendido de acompanhamento gratuito para garantir a segurança e estabilidade operacional da sua plataforma.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+.navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--green-700);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
 
-    <div id="checkout" class="checkout-section">
-        <div class="checkout-container">
-            <h2 id="check-prod">Finalizar Pedido</h2>
-            <p style="margin-bottom: 32px; color: var(--text-secondary); font-size:14px;">Introduza os detalhes abaixo para estruturarmos o início imediato via atendimento comercial.</p>
-            
-            <form id="orderForm" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="c-nome">Seu Nome Completo</label>
-                    <input type="text" id="c-nome" required placeholder="Ex: Lucas Silva">
-                </div>
-                <div class="form-group">
-                    <label for="c-loja">Nome do Negócio / Marca</label>
-                    <input type="text" id="c-loja" required placeholder="Ex: Loop Premium Store">
-                </div>
-                <div class="form-group">
-                    <label for="c-logo">Possui Logotipo Vetorial?</label>
-                    <select id="c-logo">
-                        <option value="Sim, já possuo identidade definida">Sim, já possuo logotipo pronto</option>
-                        <option value="Não (Gostaria de criar no estúdio)">Não (Desejo criar com o estúdio)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="c-com">Deseja Registro de Domínio .com?</label>
-                    <select id="c-com">
-                        <option value="Sim, incluam o registro no pacote">Sim, incluam a gestão no pacote</option>
-                        <option value="Não, já possuo domínio próprio">Não, já tenho domínio registrado</option>
-                    </select>
-                </div>
-                
-                <button type="button" onclick="enviarPedido()" class="btn btn-primary" style="width:100%; background: #1ebd59; border-color:#1ebd59; color:#ffffff;">
-                    <i class="ph ph-whatsapp-logo" style="font-size:16px;"></i> Enviar Solicitação Comercial
-                </button>
-                <button type="button" onclick="fecharCheckout()" style="width:100%; margin-top:16px; background:none; border:none; color:var(--text-secondary); font-size:14px; cursor:pointer; text-decoration:underline;">Cancelar Operação</button>
-            </form>
-        </div>
-    </div>
+.navigation a:hover {
+  color: var(--green-700);
+}
 
-    <footer class="apple-footer">
-        <div class="container">
-            <p>Copyright © 2026 Loop web & loop creative. Todos os direitos reservados. — <strong>54 99324-3670</strong></p>
-        </div>
-    </footer>
+.navigation a:hover::after {
+  transform: scaleX(1);
+}
 
-  
-</body>
-</html>
+.cart-button,
+.primary-button,
+.newsletter button {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--green-900);
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.cart-button {
+  padding: 10px 18px;
+}
+
+.cart-button:hover,
+.newsletter button:hover {
+  background: var(--green-700);
+}
+
+.cart-button span {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 6px;
+  color: var(--green-900);
+  background: var(--white);
+  border-radius: 50%;
+}
+
+/* Vídeo e apresentação */
+
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--green-900);
+}
+
+.hero-video,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video {
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 43, 32, 0.92),
+      rgba(13, 43, 32, 0.2)
+    ),
+    linear-gradient(0deg, rgba(13, 43, 32, 0.3), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(680px, 88%);
+  margin-left: 7%;
+  color: var(--white);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #9cc7a9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.1;
+}
+
+.hero h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.7rem, 6vw, 5.6rem);
+}
+
+.hero p {
+  max-width: 610px;
+  margin-bottom: 32px;
+  color: #edf5ef;
+  font-size: 1.08rem;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 15px 24px;
+  color: var(--green-900);
+  background: var(--white);
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.primary-button:hover {
+  color: var(--white);
+  background: var(--green-700);
+  transform: translateY(-2px);
+}
+
+/* Configuração geral das seções */
+
+.section {
+  width: min(1180px, 88%);
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+/* Benefícios */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.benefits article {
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.benefits article:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.benefits span {
+  font-size: 2rem;
+}
+
+.benefits h2 {
+  margin: 12px 0 6px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.benefits p,
+.product-content p,
+.about p {
+  color: var(--muted);
+}
+
+/* Produtos */
+
+.products-section {
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 38px;
+}
+
+.section-heading h2,
+.about h2,
+.newsletter h2 {
+  color: var(--green-900);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter {
+  cursor: pointer;
+  padding: 9px 16px;
+  color: var(--green-900);
+  background: transparent;
+  border: 1px solid var(--green-500);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.filter:hover,
+.filter.active {
+  color: var(--white);
+  background: var(--green-900);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+/* Imagens dos anúncios */
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: var(--green-100);
+}
+
+.product-image::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(22, 58, 45, 0.12)
+  );
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+  filter: saturate(1.08);
+  transform: scale(1.06);
+}
+
+/* Conteúdo dos produtos */
+
+.product-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px;
+}
+
+.product-category {
+  color: var(--green-700);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-content h3 {
+  margin: 8px 0;
+  color: var(--green-900);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.product-content p {
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.product-footer strong {
+  color: var(--green-900);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.add-to-cart {
+  cursor: pointer;
+  padding: 9px 12px;
+  color: var(--white);
+  background: var(--green-700);
+  border: 0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.add-to-cart:hover {
+  background: var(--green-900);
+}
+
+/* Seção sobre */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  padding-right: 12%;
+  padding-left: 12%;
+  background: var(--green-100);
+}
+
+.about p {
+  font-size: 1.08rem;
+}
+
+/* Newsletter e contato */
+
+.newsletter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.newsletter form {
+  display: flex;
+  align-self: center;
+}
+
+.newsletter input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 20px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px 0 0 999px;
+  outline: none;
+}
+
+.newsletter input::placeholder {
+  color: #8b9691;
+}
+
+.newsletter input:focus {
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(47, 104, 79, 0.12);
+}
+
+.newsletter button {
+  padding: 15px 25px;
+  border-radius: 0 999px 999px 0;
+}
+
+#form-message {
+  grid-column: 2;
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+/* Rodapé */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 35px 6%;
+  color: #d9e6dc;
+  background: var(--green-900);
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+.logo--footer {
+  color: var(--white);
+}
+
+/* Notificação do carrinho */
+
+.toast {
+  position: fixed;
+  z-index: 30;
+  right: 24px;
+  bottom: 24px;
+  visibility: hidden;
+  max-width: calc(100% - 48px);
+  padding: 14px 20px;
+  color: var(--white);
+  background: var(--green-900);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.25s,
+    transform 0.25s,
+    visibility 0.25s;
+}
+
+.toast.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Acessibilidade */
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #93bca0;
+  outline-offset: 3px;
+}
+
+/* Tablets */
+
+@media (max-width: 950px) {
+  .navigation {
+    display: none;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about,
+  .newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  #form-message {
+    grid-column: 1;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  .header {
+    min-height: 68px;
+    padding: 0 4%;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .cart-button {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .cart-button span {
+    width: 21px;
+    height: 21px;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-overlay {
+    background: rgba(13, 43, 32, 0.72);
+  }
+
+  .hero-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
+  .section {
+    width: 90%;
+    padding: 68px 0;
+  }
+
+  .benefits,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-image {
+    height: 260px;
+  }
+
+  .about {
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+    border-radius: 999px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toast {
+    right: 5%;
+    bottom: 20px;
+    max-width: 90%;
+  }
+}
+
+/* Usuários que desativaram animações */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
